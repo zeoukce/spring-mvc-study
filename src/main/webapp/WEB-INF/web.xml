@@ -5,7 +5,7 @@
          version="3.1">
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:springMvc.xml</param-value>
+        <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -15,20 +15,11 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:applicationContext.xml</param-value>
+            <param-value>classpath:springMvc.xml</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>dispatcherServlet</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-
-    <filter>
-        <filter-name>myFilter</filter-name>
-        <filter-class>com.sealinetech.filter.MyFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>myFilter</filter-name>
-        <url-pattern>*.do</url-pattern>
-    </filter-mapping>
 </web-app>
